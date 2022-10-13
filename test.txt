@@ -1,0 +1,5 @@
+Shrek,Andrew Adamson,90,DVD,29.98,2001,
+The Terminator,James Cameron,107,VHS,32500,1984,
+Shrek 2,Andrew Adamson,92,DVD,24.99,2004,
+Shrek the Third,Chris Miller,93,DVD,29.99,2007,
+Shrek Forever After,Mike Mitchell,93,Blu-ray,49.99,2010,
