@@ -14,6 +14,7 @@ library::~library() {
 
 }
 
+// TODO: make it actually sort things.
 void library::insert_sorted(movie new_movie) {
   movies.push_back(new_movie);
 }
@@ -82,11 +83,17 @@ void library::push_back(movie new_movie) {
   movies.push_back(new_movie);
 }
 
-void print_movie(movie to_print) {
-  std::cout << "Title: " << std::setw(20) << std::left << to_print.title
-	    << "  Director: " << std::setw(15) << std::left << to_print.director
-	    << "  Runtime: " << std::setw(5) << std::left << to_print.runtime
-	    << "  Format: " << std::setw(7) << std::left << to_print.format
-	    << "  Price: " << std::setw(5) << std::left << to_print.price
-	    << "  Year: " << std::setw(4) << std::left << to_print.year << std::endl;
+void library::print_movie(movie& m) {
+  std::cout << "Title: " << std::setw(20) << std::left << m.title
+	    << "  Director: " << std::setw(15) << std::left << m.director
+	    << "  Runtime: " << std::setw(5) << std::left << m.runtime
+	    << "  Format: " << std::setw(7) << std::left << m.format
+	    << "  Price: " << std::setw(5) << std::left << m.price
+	    << "  Year: " << std::setw(4) << std::left << m.year << std::endl;
+}
+
+void library::print() {
+  for(movie& m : movies) {
+    print_movie(m);
+  }
 }

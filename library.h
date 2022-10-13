@@ -28,5 +28,7 @@ class library {
   void write_to_file(std::string path_to_file);
   void push_front(movie new_movie);
   void push_back(movie new_movie);
+  void print();
+  void print_movie(movie& m);
 };
 #endif //LIBRARY_H

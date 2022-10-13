@@ -13,4 +13,4 @@ main.o: main.cpp library.h
 	$(CC) $(CFLAGS) -c main.cpp
 
 clean:
-	$(RM) *.o *~
+	$(RM) *.o *~ collection
