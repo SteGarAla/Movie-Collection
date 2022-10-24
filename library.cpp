@@ -1,22 +1,26 @@
+/**
+ * @file library.cpp
+ * @author Steven Garcia-Alamilla & Curt Lynch
+ * @date 2022-10-20
+ * @brief library implementation
+ * 
+ * Implementing library methods
+ */
+
 #include "library.h"
 #include <iostream>
 #include <iomanip>
 #include <fstream>
 #include <string>
 
-void print_movie(movie to_print);
-
-library::library() {
-  
-}
-
-library::~library() {
-
-}
-
-// TODO: make it actually sort things.
 void library::insert_sorted(movie new_movie) {
-  movies.push_back(new_movie);
+  
+  std::list<movie>::iterator itr;
+  itr = movies.begin();    
+  while(itr != movies.end() && new_movie.title.compare(itr->title) > 0){
+    itr++;
+  }
+  movies.insert(itr,new_movie);  
 }
 
 void library::find_movie(std::string title) {
@@ -43,7 +47,7 @@ void library::read_from_file(std::string path_to_file) {
   std::ifstream file;
   file.open(path_to_file);
   std::string title, director, format, runtime, year, price;
-
+  
   std::getline(file, title, ',');
   while(file){
     std::getline(file, director, ',');
@@ -51,10 +55,10 @@ void library::read_from_file(std::string path_to_file) {
     std::getline(file, format, ',');
     std::getline(file, price, ',');
     std::getline(file, year, ',');
-
+    
     movie m = {title, director, std::stoi(runtime), format, std::stof(price), std::stoi(year)};
     insert_sorted(m);
-
+    
     file.get();
     std::getline(file, title, ',');
   }
