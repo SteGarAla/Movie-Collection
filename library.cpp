@@ -78,11 +78,11 @@ void library::write_to_file(std::string path_to_file) {
   file.open(path_to_file);
   for (movie& m : movies) {
     file << m.title << ','
-	 << m.director << ','
-	 << m.runtime << ','
-	 << m.format << ','
-	 << m.price << ','
-	 << m.year << ",\n";
+	       << m.director << ','
+	       << m.runtime << ','
+	       << m.format << ','
+	       << m.price << ','
+	       << m.year << ",\n";
   }
   file.close();
 }
@@ -97,11 +97,11 @@ void library::push_back(movie new_movie) {
 
 void library::print_movie(movie& m) {
   std::cout << "Title: " << std::setw(20) << std::left << m.title
-	    << "  Director: " << std::setw(15) << std::left << m.director
-	    << "  Runtime: " << std::setw(5) << std::left << m.runtime
-	    << "  Format: " << std::setw(7) << std::left << m.format
-	    << "  Price: " << std::setw(5) << std::left << m.price
-	    << "  Year: " << std::setw(4) << std::left << m.year << std::endl;
+	          << "  Director: " << std::setw(15) << std::left << m.director
+	          << "  Runtime: " << std::setw(5) << std::left << m.runtime
+	          << "  Format: " << std::setw(7) << std::left << m.format
+	          << "  Price: " << std::setw(5) << std::left << m.price
+	          << "  Year: " << std::setw(4) << std::left << m.year << std::endl;
 }
 
 void library::print() {
